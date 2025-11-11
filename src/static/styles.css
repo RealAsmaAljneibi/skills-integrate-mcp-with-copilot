@@ -12,16 +12,19 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
 }
 
 header {
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
-  background-color: #1a237e;
+  background: linear-gradient(135deg, #32cd32 0%, #7fff00 100%);
   color: white;
   border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(50, 205, 50, 0.3);
 }
 
 header h1 {
@@ -53,8 +56,8 @@ section {
 section h3 {
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-  color: #1a237e;
+  border-bottom: 2px solid #32cd32;
+  color: #228b22;
 }
 
 .activity-card {
@@ -67,7 +70,7 @@ section h3 {
 
 .activity-card h4 {
   margin-bottom: 10px;
-  color: #0066cc;
+  color: #32cd32;
 }
 
 .activity-card p {
@@ -83,7 +86,7 @@ section h3 {
 
 .participants-section h5 {
   margin-bottom: 8px;
-  color: #1a237e;
+  color: #228b22;
   font-size: 16px;
 }
 
@@ -150,7 +153,7 @@ section h3 {
 }
 
 button {
-  background-color: #1a237e;
+  background-color: #32cd32;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -158,10 +161,11 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: #3949ab;
+  background-color: #228b22;
 }
 
 .message {
@@ -197,4 +201,117 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+/* Git-style branch line animations */
+.git-branch-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0.15;
+}
+
+.branch-line {
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #32cd32, transparent);
+  animation: branchMove 20s linear infinite;
+}
+
+.branch-line:nth-child(1) {
+  left: 10%;
+  height: 40%;
+  animation-delay: 0s;
+  animation-duration: 25s;
+}
+
+.branch-line:nth-child(2) {
+  left: 25%;
+  height: 60%;
+  animation-delay: 5s;
+  animation-duration: 30s;
+}
+
+.branch-line:nth-child(3) {
+  left: 45%;
+  height: 50%;
+  animation-delay: 10s;
+  animation-duration: 28s;
+}
+
+.branch-line:nth-child(4) {
+  left: 65%;
+  height: 45%;
+  animation-delay: 15s;
+  animation-duration: 22s;
+}
+
+.branch-line:nth-child(5) {
+  left: 85%;
+  height: 55%;
+  animation-delay: 8s;
+  animation-duration: 26s;
+}
+
+.branch-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #32cd32;
+  border-radius: 50%;
+  animation: nodeFloat 15s ease-in-out infinite;
+}
+
+.branch-node:nth-child(6) {
+  left: 15%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.branch-node:nth-child(7) {
+  left: 35%;
+  top: 40%;
+  animation-delay: 3s;
+}
+
+.branch-node:nth-child(8) {
+  left: 55%;
+  top: 60%;
+  animation-delay: 6s;
+}
+
+.branch-node:nth-child(9) {
+  left: 75%;
+  top: 30%;
+  animation-delay: 9s;
+}
+
+.branch-node:nth-child(10) {
+  left: 90%;
+  top: 70%;
+  animation-delay: 12s;
+}
+
+@keyframes branchMove {
+  0% {
+    transform: translateY(-100%) rotate(5deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(-5deg);
+  }
+}
+
+@keyframes nodeFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 1;
+  }
 }
