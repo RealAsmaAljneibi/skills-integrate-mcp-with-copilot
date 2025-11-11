@@ -10,6 +10,11 @@
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div class="user-menu">
+        <button id="user-icon" class="user-icon" title="Teacher Login">
+          👤
+        </button>
+      </div>
     </header>
 
     <main>
@@ -44,6 +49,37 @@
     <footer>
       <p>&copy; 2023 Mergington High School</p>
     </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div id="login-message" class="hidden"></div>
+      </div>
+    </div>
+
+    <!-- User Menu Dropdown -->
+    <div id="user-dropdown" class="user-dropdown hidden">
+      <div id="logged-out-menu">
+        <button id="login-button" class="dropdown-item">Login</button>
+      </div>
+      <div id="logged-in-menu" class="hidden">
+        <p class="user-greeting">Welcome, <span id="username-display"></span>!</p>
+        <button id="logout-button" class="dropdown-item">Logout</button>
+      </div>
+    </div>
 
     <script src="app.js"></script>
   </body>
